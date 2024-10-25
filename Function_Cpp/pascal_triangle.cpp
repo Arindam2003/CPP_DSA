@@ -19,5 +19,28 @@ int combi(int n,int r)
 
 int main()
 {
-    int 
+    int i,j,n;
+    cout<<"Enter Number of Lines:";
+    cin>>n;
+    int flag;
+    for(i=1;i<=n;i++)
+    {
+        flag=1;
+        int r=0;
+        for(j=1;j<2*n;j++)
+        {
+            if(j>=n+1-i&&j<=n-1+i)
+            {
+                if(flag)
+                    cout<<combi((i-1),r++);
+                else
+                    cout<<" ";
+                flag=1-flag;
+            }
+            else{
+                cout<<" ";
+            }
+        }
+        cout<<endl;
+    }
 }

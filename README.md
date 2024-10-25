@@ -23,5 +23,9 @@ A collection of data structure implementations in C+++
 - [2. Highest value digit in Number](./Function_Cpp/highest_digit_number.cpp)
 - [3. X raised to the power Y](./Function_Cpp/x_tothepower_y.cpp)
 - [4. Pascal Triangle](./Function_Cpp/pascal_triangle.cpp)
+- [5. Find number in Fibo Series](./Function_Cpp/find_fibo.cpp)
+- [6. Add 2 or 3 Number using Default Argument](./Function_Cpp/add_2_3_default.cpp)
+- [7. Area of Circle,Rec,Tri](./Function_Cpp/area_cir_rec_tri_overloading.cpp)
+- [8. Diffrent Argument Passing](./Function_Cpp/diffrent_arg.cpp)
 
 </details>
