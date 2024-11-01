@@ -45,5 +45,5 @@ A collection of data structure implementations in C+++
 
 - [1. Complex Number Add](./Member_Function/Complex_Number.cpp)
 - [2. Time Normalize and Greater](./Member_Function/Time.cpp)
-- [3. ]
+
 </details>
