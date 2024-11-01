@@ -39,3 +39,11 @@ A collection of data structure implementations in C+++
 - [4. Circle get set and return Object](./Classes_Object/circle.cpp)
 
 </details>
+
+<details>
+    <summary>👉🏻Member Function C++</summary>
+
+- [1. Complex Number Add](./Member_Function/Complex_Number.cpp)
+- [2. Time Normalize and Greater](./Member_Function/Time.cpp)
+- [3. ]
+</details>
