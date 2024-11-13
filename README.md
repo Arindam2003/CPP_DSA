@@ -1,4 +1,4 @@
-# C++ and Data-Structures Using c++
+# C++
 A collection of data structure implementations in C+++
 
 <details>
@@ -46,4 +46,14 @@ A collection of data structure implementations in C+++
 - [1. Complex Number Add](./Member_Function/Complex_Number.cpp)
 - [2. Time Normalize and Greater](./Member_Function/Time.cpp)
 - [3. Test Result](./Member_Function/TestResult.cpp)
+</details>
+
+</br>
+
+# Data-Structures Using c++
+
+<details>
+    <summary>👉🏻Array Data Structure in C++</summary>
+
+- [1. Modified Array-->insert,delete,append,edit,count,get_element,deallocate,find_element](./Array_Data_Structure/modified_array.cpp)
 </details>
