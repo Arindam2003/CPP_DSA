@@ -21,6 +21,9 @@ class Array
         ~Array();
         int find_elem(int);
 
+        Array (Array &); //!copy constructor
+        Array& operator=(Array &);
+
 };
 
 
@@ -110,6 +113,31 @@ int Array::find_elem(int x)
             return i;
     }
     return -1;
+}
+Array::Array(Array &arr)
+{
+    capacity=arr.capacity;
+    last_index=arr.last_index;
+    ptr=new int[capacity];
+    for(int i=0;i<=last_index;i++)
+    {
+        ptr[i]=arr.ptr[i];
+    }
+}
+Array& Array::operator=(Array &arr)
+{
+    if(ptr!=nullptr)
+    {
+        delete []ptr;
+    }
+    capacity=arr.capacity;
+    last_index=arr.last_index;
+    ptr=new int[capacity];
+    for(int i=0;i<=last_index;i++)
+    {
+        ptr[i]=arr.ptr[i];
+    }
+    return *this;
 }
 
 int main()

@@ -56,4 +56,7 @@ A collection of data structure implementations in C+++
     <summary>👉🏻Array Data Structure in C++</summary>
 
 - [1. Modified Array-->insert,delete,append,edit,count,get_element,deallocate,find_element](./Array_Data_Structure/modified_array.cpp)
+- [2. On Modified Array-->Copy Constructor and Copy Assignment Operator](./Array_Data_Structure/copy_const_modified.cpp)
+- [3. ]
+
 </details>
