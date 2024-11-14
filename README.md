@@ -57,6 +57,6 @@ A collection of data structure implementations in C+++
 
 - [1. Modified Array-->insert,delete,append,edit,count,get_element,deallocate,find_element](./Array_Data_Structure/modified_array.cpp)
 - [2. On Modified Array-->Copy Constructor and Copy Assignment Operator](./Array_Data_Structure/copy_const_modified.cpp)
-- [3. ]
+- [3. Dynamic Array With Double and Half Array Concept](./Array_Data_Structure/Dynamic_Array.cpp)
 
 </details>

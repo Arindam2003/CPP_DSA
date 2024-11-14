@@ -21,6 +21,8 @@ class DynArray
         void del(int );
         int get(int );
         int count();
+        ~DynArray();
+        int find_elem(int);
 };
 
 DynArray::DynArray(int cap)
@@ -138,3 +140,18 @@ void DynArray::halfArray()
     ptr=temp;
     capacity=capacity/2;
 }
+DynArray::~DynArray()
+{
+    delete []ptr;
+}
+int DynArray::find_elem(int x)
+{
+    for(int i=0;i<last_index;i++)
+    {
+        if(ptr[i]==x)
+            return i;
+    }
+    return -1;
+}
+
+
