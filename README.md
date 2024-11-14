@@ -60,3 +60,11 @@ A collection of data structure implementations in C+++
 - [3. Dynamic Array With Double and Half Array Concept](./Array_Data_Structure/Dynamic_Array.cpp)
 
 </details>
+
+<details>
+    <summary>👉🏻Linked List</summary>
+
+- [1. Singly Linked List](./Linked_List_Data_Structure/singly_linked_list.cpp)
+- [2. ]
+
+</details>
