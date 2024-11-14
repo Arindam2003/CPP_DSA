@@ -20,7 +20,7 @@ class Array
         int count();
         ~Array();
         int find_elem(int);
-
+        void disp();
 };
 
 
@@ -111,8 +111,18 @@ int Array::find_elem(int x)
     }
     return -1;
 }
+void Array::disp()
+{
+    for(int i;i<=last_index;i++)
+    {
+        cout<<ptr[i]<<" ";
+    }
+}
 
 int main()
 {
     Array arr(4);
+    arr.append(23);
+    arr.append(12);
+    arr.disp();
 }
