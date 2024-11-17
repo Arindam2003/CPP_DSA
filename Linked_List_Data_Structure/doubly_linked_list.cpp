@@ -8,6 +8,7 @@ struct node
     node *next;
 };
 
+
 class DLL
 {
     private:
@@ -19,7 +20,11 @@ class DLL
         void display();
         node* search(int);
         void insertAtNode(node *,int);
+        void deleteFirst();
+        void deleteLast();
+        void deleteAny(int );
 };
+
 
 DLL::DLL()   //! Constructor
 {
@@ -59,7 +64,7 @@ void DLL::display()    //! Display List
     t=start;
     while(t!=nullptr)
     {
-        cout<<t->item<<" ";
+        cout<<t->item<<"->";
         t=t->next;
     }
 }
@@ -85,12 +90,63 @@ void DLL::insertAtNode(node *t,int data)   //! Insert At Node
         n->next=t->next;
     }
 }
+void DLL::deleteFirst()
+{
+    node *t;
+    if(start)
+    {
+        t=start;
+        start=start->next;
+        delete t;
+    }
+}
+void DLL::deleteLast()
+{
+    node *t;
+    t=start;
+    if(start)
+    {
+        if(start->next==nullptr)
+        {
+            delete start;
+            start=nullptr;
+        }
+        while(t->next->next!=nullptr)
+        {
+            t=t->next;
+        }
+        delete t->next;
+        t->next=nullptr;
+    }
 
-
-
-
-
-
+}
+void DLL::deleteAny(int data)
+{
+    node *t1,*t2;
+    t2=search(data);
+    t1=start;
+    if(t2==t1)
+    {
+        deleteFirst();
+    }
+    else
+    {
+        while(t1->next!=t2)
+        {
+            t1=t1->next;
+        }
+        t1->next=t2->next;
+        delete t2;
+    }
+}
+DLL::~DLL()
+{
+    while (start)
+    {
+        deleteFirst();
+    }
+    
+}
 
 
 
@@ -100,7 +156,26 @@ int main()
     d.insertAtStart(23);
     d.insertAtStart(12);
     d.insertAtLast(100);
+    d.insertAtLast(500);
+    d.insertAtLast(20);
+    d.insertAtLast(40);
+    d.insertAtLast(60);
+    d.insertAtLast(1110);
     d.display();
     cout<<endl;
+    d.deleteLast();
+    d.display();
+    cout<<endl;
+    d.deleteAny(500);
+    d.display();
     return 0;
 }
+
+
+
+
+
+
+
+//!  Important Notes...
+//? When insert a node hen first node full create and then check base case like here is any node or not then go for that part first

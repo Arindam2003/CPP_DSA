@@ -78,7 +78,7 @@ void SLL::insertAfter(node *t,int data)
 }
 void SLL::deleteFirst()
 {
-    if(start==nullptr)
+    if(start)
     {
         node *t;
         t=start;
@@ -98,20 +98,20 @@ void SLL::displayList()
 void SLL::deleteLast()
 {
     node *t=start;
-    if(start)
+    if(start)           //! If A list Contains Only one nodes
     {
         if(start->next==nullptr)
         {
             delete start;
             start=nullptr;
         }
+        while(t->next->next!=nullptr)    //! Before last node
+        {
+            t=t->next;
+        }
+        delete t->next;
+        t->next=nullptr;
     }
-    while(t->next->next!=nullptr)
-    {
-        t=t->next;
-    }
-    delete t->next;
-    t->next=nullptr;
 }
 void SLL::deleteNode(int data)
 {
@@ -145,10 +145,6 @@ SLL::~SLL()
 }
 
 
-
-
-
-
 int main()
 {
     SLL s;
@@ -158,6 +154,9 @@ int main()
     s.displayList();
     s.deleteFirst();
     cout<<endl;
+    s.displayList();
+    cout<<endl;
+    s.deleteLast();
     s.displayList();
     return 0;
 }
