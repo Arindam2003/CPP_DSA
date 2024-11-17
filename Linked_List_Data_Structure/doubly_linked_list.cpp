@@ -23,6 +23,7 @@ class DLL
         void deleteFirst();
         void deleteLast();
         void deleteAny(int );
+        ~DLL();
 };
 
 
@@ -88,6 +89,9 @@ void DLL::insertAtNode(node *t,int data)   //! Insert At Node
         n->prev=t;
         n->item=data;
         n->next=t->next;
+        t->next->prev=n;
+        t->next=n;
+
     }
 }
 void DLL::deleteFirst()
@@ -97,6 +101,7 @@ void DLL::deleteFirst()
     {
         t=start;
         start=start->next;
+        start->prev=nullptr;
         delete t;
     }
 }
@@ -122,20 +127,23 @@ void DLL::deleteLast()
 }
 void DLL::deleteAny(int data)
 {
-    node *t1,*t2;
+    node *t2;
     t2=search(data);
-    t1=start;
-    if(t2==t1)
+    
+    if(t2)
     {
-        deleteFirst();
-    }
-    else
-    {
-        while(t1->next!=t2)
+        if(t2->next!=nullptr)   // ! Not last node
         {
-            t1=t1->next;
+            t2->next->prev=t2->prev;
         }
-        t1->next=t2->next;
+        if(t2->prev!=nullptr)    //! Not first node
+        {
+            t2->prev->next=t2->next;
+        }
+        else
+        {
+            start=t2->next;
+        }
         delete t2;
     }
 }
@@ -173,7 +181,7 @@ int main()
 
 
 
-
+//!!!!Deletation is not perfect...
 
 
 
