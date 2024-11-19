@@ -65,6 +65,6 @@ A collection of data structure implementations in C+++
     <summary>👉🏻Linked List</summary>
 
 - [1. Singly Linked List](./Linked_List_Data_Structure/singly_linked_list.cpp)
-- [2. ]
+- [2. Doubly Linked List](./Linked_List_Data_Structure/doubly_linked_list.cpp)
 
 </details>
