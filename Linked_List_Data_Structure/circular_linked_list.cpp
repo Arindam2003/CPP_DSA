@@ -18,7 +18,11 @@ public:
     void display();
     void insertLast(int);
     node *search(int);
-    void insertAfter(node *,int);
+    void insertAfter(int,int);
+    void delFirst();
+    void delLast();
+    void delNode(int);
+    ~CLL();
 };
 
 CLL::CLL()
@@ -69,26 +73,32 @@ void CLL::insertLast(int data)
     }
 }
 
-node *CLL::search(int data)
+node* CLL::search(int data)
 {
     node *temp = start;
     while(temp->next!=start)
     {
-        if (data == temp->item)
+        if (temp->item==data)
             return temp;
+        temp=temp->next;
     }
     if(temp->item==data)
+    {
         return temp;
-    else
+    }
+    else{
         return 0;
+    }
 }
 
-void CLL::insertAfter(node *t,int data)
+void CLL::insertAfter(int s,int data)
 {
+    node *t=search(s);
     node *n=new node;
     n->item=data;
     if(start==nullptr)
     {
+        cout<<".";
         start=n;
         n->next=start;
     }
@@ -106,13 +116,94 @@ void CLL::insertAfter(node *t,int data)
 
 void CLL::display()
 {
-    node *t = start;
-    while (t->next != start)
+    if(start==nullptr)
     {
-        cout << t->item << "->";
-        t = t->next;
+        cout<<"All Node Deleted"<<endl;
     }
-    cout << t->item;
+    else
+    {
+        node *t = start;
+        while (t->next != start)
+        {
+            cout << t->item << "->";
+            t = t->next;
+        }
+        cout << t->item;
+    }
+}
+
+void CLL::delFirst()
+{
+    if(start==start->next)
+    {
+        node *temp=start;
+        start=nullptr;
+        delete temp;
+    }
+    else
+    {
+        node *first=start;
+        node *last=start;
+        while(last->next!=start)
+        {
+            last=last->next;
+        }
+        last->next=first->next;
+        start=first->next;
+        delete first;
+    }
+}
+
+void CLL::delLast()
+{
+    if(start==start->next)
+    {
+        node *temp=start;
+        start=nullptr;
+        delete temp;
+    }
+    else
+    {
+        node *temp=start;
+        while(temp->next->next!=start)
+        {
+            temp=temp->next;
+        }
+        node *t=temp->next;
+        temp->next=start;
+        delete t;
+    }
+}
+
+CLL::~CLL()
+{
+    while(start)
+    {
+        delFirst();
+    }
+}
+
+void CLL::delNode(int item)
+{
+    node *t=search(item);
+    if(start==t)
+    {
+        delFirst();
+    }
+    else if(t->next==start)
+    {
+        delLast();
+    }
+    else
+    {
+        node *temp=start;
+        while(temp->next!=t)
+        {
+            temp=temp->next;
+        }
+        temp->next=t->next;
+        delete t;
+    }
 }
 
 int main()
@@ -120,11 +211,18 @@ int main()
     CLL c;
     // c.insertFirst(23);
     // c.insertFirst(20);
-    // c.insertFirst(21);
-    // c.insertFirst(20);
+    c.insertFirst(21);
+    c.insertFirst(20);
     c.insertLast(100);
-    c.insertLast(200);
+    // c.insertLast(200);
+    // c.delFirst();
+    // c.delFirst();
+    // c.delLast();
     c.display();
+    c.delNode(21);
+    cout<<endl;
+    c.display();
+
     cout << endl;
     return 0;
 }
