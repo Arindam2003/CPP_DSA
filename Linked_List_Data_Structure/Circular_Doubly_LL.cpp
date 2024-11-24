@@ -19,6 +19,10 @@ public:
     void insertLast(int);
     node * search(int);
     void insertNode(int,int);
+    void delFirst();
+    void delLast();
+    void delNode(int);
+    ~CDLL();
 };
 
 CDLL::CDLL()
@@ -76,6 +80,7 @@ node* CDLL::search(int data)
         {
             return temp;
         }
+        temp=temp->next;
     }
     if(data==temp->item)
     {
@@ -88,7 +93,7 @@ node* CDLL::search(int data)
 
 void CDLL::insertNode(int s,int data)
 {
-    node *t=search(data);
+    node *t=search(s);
     
     if(start==nullptr)
     {
@@ -124,6 +129,74 @@ void CDLL::display()
     cout<<endl;
 }
 
+void CDLL::delFirst()
+{
+    if(start!=nullptr)
+    {
+        if(start->next==start)
+        {
+            node *temp=start;
+            start=nullptr;
+            delete temp;
+        }
+        else
+        {
+            node *temp=start;
+            start->next->prev=start->prev;
+            start=start->next;
+            temp->prev->next=start;
+            delete temp;
+        }
+    }
+}
+
+void CDLL::delLast()
+{
+    node *temp=start;
+    if(start!=nullptr)
+    {
+        if(start->next==start)
+        {
+            node *temp=start;
+            start=nullptr;
+            delete temp;
+        }
+        else
+        {
+            node *last=start->prev;
+            start->prev=last->prev;
+            last->prev->next=start;
+            delete last;
+        }
+    }
+}
+
+void CDLL::delNode(int data)
+{
+    if(start!=nullptr)
+    {
+        if(start->next==start)
+        {
+            delFirst();
+        }
+        else
+        {
+            node *temp=search(data);
+            temp->prev->next=temp->next;
+            temp->next->prev=temp->prev;
+            delete temp;
+        }
+    }
+}
+
+CDLL::~CDLL()
+{
+    while(start)
+    {
+        delFirst();
+    }
+}
+
 int main()
 {
     CDLL s;
@@ -134,7 +207,10 @@ int main()
     // s.insertLast(1000);
     s.insertNode(444,500);
     s.display();
-
+    // s.delFirst();
+    // s.delLast();
+    s.delNode(500);
+    s.display();
 
     return 0;
 }

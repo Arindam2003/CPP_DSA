@@ -69,4 +69,6 @@ A collection of data structure implementations in C+++
 - [3. Circular Linked List With Start Pointer](./Linked_List_Data_Structure/circular_linked_list.cpp)
 
 
+- [5. Doubly Circular Linked List](./Linked_List_Data_Structure/Circular_Doubly_LL.cpp)
+
 </details>
