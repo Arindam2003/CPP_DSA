@@ -98,13 +98,11 @@ void CLL::insertAfter(int s,int data)
     n->item=data;
     if(start==nullptr)
     {
-        cout<<".";
         start=n;
         n->next=start;
     }
     else
     {
-        node *temp=start;
         if(t!=nullptr)
         {
             n->next=t->next;
@@ -209,8 +207,8 @@ void CLL::delNode(int item)
 int main()
 {
     CLL c;
-    // c.insertFirst(23);
-    // c.insertFirst(20);
+    c.insertFirst(23);
+    c.insertFirst(20);
     c.insertFirst(21);
     c.insertFirst(20);
     c.insertLast(100);
@@ -219,10 +217,11 @@ int main()
     // c.delFirst();
     // c.delLast();
     c.display();
-    c.delNode(21);
+    // c.delNode(21);
+    c.insertAfter(20,500);
+    c.insertAfter(21,1500);
     cout<<endl;
     c.display();
-
     cout << endl;
     return 0;
 }
