@@ -14,6 +14,8 @@ class Queue{
         int overFlow();
         int underFlow();
         void delFront();
+        void count();
+        ~Queue();
 };
 
 Queue::Queue(int cap)
@@ -100,6 +102,11 @@ Queue::~Queue()
     }
 }
 
+void Queue::count()
+{
+    cout<<endl<<"Number of element is : "<<rear+1<<endl;
+}
+
 int main()
 {
     Queue q(4);
@@ -115,5 +122,6 @@ int main()
     q.delFront();
     q.display();
     cout<<endl;
+    q.count();
     return 0;
 }
