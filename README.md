@@ -53,7 +53,7 @@ A collection of data structure implementations in C+++
 # Data-Structures Using c++
 
 <details>
-    <summary>👉🏻Array Data Structure in C++</summary>
+    <summary>✅Array Data Structure in C++</summary>
 
 - [1. Modified Array-->insert,delete,append,edit,count,get_element,deallocate,find_element](./Array_Data_Structure/modified_array.cpp)
 - [2. On Modified Array-->Copy Constructor and Copy Assignment Operator](./Array_Data_Structure/copy_const_modified.cpp)
@@ -62,7 +62,7 @@ A collection of data structure implementations in C+++
 </details>
 
 <details>
-    <summary>👉🏻Linked List</summary>
+    <summary>✅Linked List</summary>
 
 - [1. Singly Linked List All](./Linked_List_Data_Structure/singly_linked_list.cpp)
 - [2. Doubly Linked List All](./Linked_List_Data_Structure/doubly_linked_list.cpp)
@@ -72,10 +72,15 @@ A collection of data structure implementations in C+++
 - [5. Doubly Circular Linked List](./Linked_List_Data_Structure/Circular_Doubly_LL.cpp)
 
 </details>
+    <summary>✅Stack</summary>
+
+- [1. Stack Using Array](./Stack_Data_Structure/stack_using_array.cpp)
 
 <details>
 </details>
+    <summary>✅Queue</summary>
 
+- [1. Queue Using Array](./Queue_Data_Structure/queue_using_array.cpp)
 
 <details>
 </details>
