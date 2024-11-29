@@ -118,11 +118,11 @@ Collection of Data Structure Implement in C++...
 To Solve Real World Problem It's Needed...
 
 <details>
-    <summary>⭐️Array</summary>
+    <summary>⭐️450</summary>
 
-- [1. Revese an Array](./Final_450/Array/Reverse_array_string.c)
-- [2. Max and Min in Array Return](./Final_450/Array/Max_and_Min_array.cpp)
-- [3. Rotate by One](./Final_450/Array/Rotate_by_one.cpp)
+- [1. Revese an Array](./Final_450/Reverse_array_string.c)
+- [2. Max and Min in Array Return](./Final_450/Max_and_Min_array.cpp)
+- [3. Rotate by One](./Final_450/Rotate_by_one.cpp)
 
 
 
