@@ -123,6 +123,7 @@ To Solve Real World Problem It's Needed...
 - [1. Revese an Array](./Final_450/Reverse_array_string.c)
 - [2. Max and Min in Array Return](./Final_450/Max_and_Min_array.cpp)
 - [3. Rotate by One](./Final_450/Rotate_by_one.cpp)
+- [4. Find the Duplicate Number](./Final_450/Find_Duplicate.cpp)
 
 
 
