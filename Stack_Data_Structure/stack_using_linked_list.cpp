@@ -13,7 +13,7 @@ class Stack{
         Stack();
         void push(int);
         void peek();
-        void pop();
+        int pop();
         ~Stack();
         void display();
 
@@ -44,17 +44,19 @@ void Stack::peek()
     }
 }
 
-void Stack::pop()
+int Stack::pop()
 {
     if(top==nullptr)
     {
-        cout<<"Nothing for Pop"<<endl;
+        return -1;
     }
     else
     {
+        int d=top->data;
         node *temp=top;
         top=top->next;
         delete temp;
+        return d;
     }
 }
 
@@ -77,7 +79,6 @@ void Stack::display()
     }
     cout<<endl;
 }
-
 
 
 int main()

@@ -118,7 +118,7 @@ Collection of Data Structure Implement in C++...
 To Solve Real World Problem It's Needed...
 
 <details>
-    <summary>⭐️450</summary>
+    <summary>⭐️Array</summary>
 
 - [1. Revese an Array](./Final_450/Reverse_array_string.c)
 - [2. Max and Min in Array Return](./Final_450/Max_and_Min_array.cpp)
