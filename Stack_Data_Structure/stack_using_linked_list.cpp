@@ -14,6 +14,7 @@ class Stack{
         void push(int);
         void peek();
         int pop();
+        bool isEmpty();
         ~Stack();
         void display();
 
@@ -22,6 +23,11 @@ class Stack{
 Stack::Stack()
 {
     top=nullptr;
+}
+
+bool Stack::isEmpty()
+{
+    return top==nullptr;
 }
 
 void Stack::push(int item)
@@ -79,6 +85,39 @@ void Stack::display()
     }
     cout<<endl;
 }
+
+//!if want to return adress...
+/*
+Stack& reverseStack(Stack &stk)
+{
+    Stack *ptr=new Stack();
+    while(!stk.isEmpty())
+    {
+        ptr->push(stk.pop());
+    }
+    return *ptr;
+}
+*/
+//! if nothing returns so this return type is void 
+void reverseStack(Stack &stk)
+{
+    Stack s1;
+    while(!stk.isEmpty())
+    {
+        s1.push(stk.pop());
+    }
+    Stack s2;
+    while(!s1.isEmpty())   //! Loops run when data is not empty from the stack from where i get this...
+    {
+        s2.push(s1.pop());
+    }
+    while(!s2.isEmpty())
+    {
+        stk.push(s2.pop());
+    }
+}
+
+
 
 
 int main()
