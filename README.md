@@ -78,6 +78,7 @@ Collection of Data Structure Implement in C++...
     <summary>✅Stack</summary>
 
 - [1. Stack Using Array](./Stack_Data_Structure/stack_using_array.cpp)
+- [2. Stack Using Linked List](./Stack_Data_Structure/stack_using_linked_list.cpp)
 
 </details>
 
