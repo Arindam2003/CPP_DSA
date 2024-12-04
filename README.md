@@ -86,6 +86,7 @@ Collection of Data Structure Implement in C++...
     <summary>✅Queue</summary>
 
 - [1. Queue Using Array](./Queue_Data_Structure/queue_using_array.cpp)
+- [2. Queue_using_array_best](./Queue_Data_Structure/Queue_array_best.cpp)
 
 </details>
 
