@@ -1,5 +1,6 @@
 #include<iostream>
 #define OVERFLOW 1
+#define UNDERFLOW 2
 using namespace std;
 
 class Queue{
@@ -13,7 +14,7 @@ class Queue{
         void display();
         void viewFront();
         bool overFlow();
-        int underFlow();
+        bool underFlow();
         void delFront();
         void count();
         ~Queue();
@@ -68,15 +69,10 @@ void Queue::delFront()
     }
 }
 
-int Queue::underFlow()
+bool Queue::underFlow()
 {
     if(rear<front)
-    {
-        return 1;
-    }
-    else{
-        return 0;
-    }
+        throw UNDERFLOW;
 }
 
 void Queue::display()
