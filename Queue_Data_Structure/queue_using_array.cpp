@@ -1,4 +1,5 @@
 #include<iostream>
+#define OVERFLOW 1
 using namespace std;
 
 class Queue{
@@ -11,7 +12,7 @@ class Queue{
         void viewRear();
         void display();
         void viewFront();
-        int overFlow();
+        bool overFlow();
         int underFlow();
         void delFront();
         void count();
@@ -23,14 +24,14 @@ Queue::Queue(int cap)
     capacity=cap;
     rear=-1;
     front=0;
-    ptr=new int(capacity);
+    ptr=new int[cap];
 }
 
 void Queue::insert(int data)
 {
     if(overFlow())
     {
-        cout<<"Queue OverFlow"<<endl;
+        throw OVERFLOW;
     }
     else{
         ptr[++rear]=data;
@@ -45,15 +46,9 @@ void Queue::viewFront()
 {
     cout<<endl<<"Front Element is->"<<ptr[front];
 }
-int Queue::overFlow()
+bool Queue::overFlow()
 {
-    if(rear>=capacity-1)
-    {
-        return 1;
-    }
-    else{
-        return 0;
-    }
+    return (capacity-1==rear&&front==0 || rear+1==front);
 }
 
 void Queue::delFront()
