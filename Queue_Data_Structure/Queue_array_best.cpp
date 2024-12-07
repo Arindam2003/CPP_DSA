@@ -15,7 +15,10 @@ public:
     bool isFull(); 
     bool isEmpty();
     void insert(int);
+    int getFront();
+    int getRear();
     void del();
+    int count();
     ~Queue();
 };
 
@@ -55,17 +58,54 @@ void Queue::insert(int num)
     }
 }
 
+int Queue::getFront()
+{
+    if(front==-1)
+        throw UNDERFLOW;
+    return ptr[front];
+}
 
-
+int Queue::getRear()
+{
+    if(rear==-1)
+        throw UNDERFLOW;
+    return ptr[rear];
+}
 
 void Queue::del()
 {
     if(isEmpty())
-    {
         throw UNDERFLOW;
-    }
+    if(front==rear)
+        front=rear=-1;
+    else if(front==capacity-1)
+        front=0;
+    else
+        front++;
+}
+Queue::~Queue()
+{
+    delete []ptr;
 }
 
+int Queue::count()
+{
+    int c=0;
+    int i;
+    if(front==-1)
+            return c;
+    for(i=front;i!=rear;)
+    {
+        if(i==capacity-1)
+        {
+            i=0;
+        }
+        else{
+            i++;
+        }
+    }
+    return c;
+}
 
 
 
