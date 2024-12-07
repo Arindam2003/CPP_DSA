@@ -48,11 +48,15 @@ void Queue::insert(int num)
         rear=0;
         ptr[rear]=num;
     }
-    else
+    else if(rear==capacity-1)
     {
-        
+        rear=0;
+        ptr[rear]=num;
     }
 }
+
+
+
 
 void Queue::del()
 {
