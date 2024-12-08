@@ -18,6 +18,7 @@ public:
     void display();
     int viewRear();
     int viewFront();
+    void delFront();
 };
 
 Queue::Queue()
@@ -59,6 +60,14 @@ int Queue::viewFront()
         return front->item;
     }
 }
+
+void Queue::delFront()
+{
+    node *temp=front;
+    front=front->next;
+    delete []temp;
+}
+
 
 
 
