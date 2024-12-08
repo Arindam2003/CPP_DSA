@@ -63,9 +63,16 @@ int Queue::viewFront()
 
 void Queue::delFront()
 {
-    node *temp=front;
-    front=front->next;
-    delete []temp;
+    if(front==nullptr)
+    {
+        cout<<"UnderFlow";
+    }
+    else
+    {
+        node *temp=front;
+        front=front->next;
+        delete []temp;
+    }
 }
 
 
@@ -101,5 +108,7 @@ int main()
     cout << endl;
     cout<<"Rear element is - >"<<q.viewRear()<<endl;
     cout<<"Front element is - >"<<q.viewFront()<<endl;
+    q.delFront();
+    q.display();
     return 0;
 }
