@@ -19,6 +19,8 @@ public:
     int viewRear();
     int viewFront();
     void delFront();
+    ~Queue();
+    int count();
 };
 
 Queue::Queue()
@@ -60,7 +62,6 @@ int Queue::viewFront()
         return front->item;
     }
 }
-
 void Queue::delFront()
 {
     if(front==nullptr)
@@ -75,9 +76,25 @@ void Queue::delFront()
     }
 }
 
+Queue::~Queue()
+{
+    if(front != nullptr)
+    {
+        delFront();
+    }
+}
 
-
-
+int Queue::count()
+{
+    node *temp=front;
+    int c=0;
+    while (temp!=nullptr)
+    {
+        c++;
+        temp=temp->next;
+    }
+    return c;
+}
 
 void Queue::display()
 {
@@ -110,5 +127,6 @@ int main()
     cout<<"Front element is - >"<<q.viewFront()<<endl;
     q.delFront();
     q.display();
+    cout<<endl<<"Number inQueue is - > " <<q.count()<<endl;
     return 0;
 }
