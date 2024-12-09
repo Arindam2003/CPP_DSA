@@ -1,8 +1,8 @@
-#include<iostream>
+#include <iostream>
 #define DUPLICATE 1;
 using namespace std;
 
-struct  node
+struct node
 {
     node *left;
     int data;
@@ -13,6 +13,7 @@ class BST
 {
 private:
     node *root;
+
 public:
     BST();
     void insert(int);
@@ -20,47 +21,49 @@ public:
 
 BST::BST()
 {
-    root=nullptr;
+    root = nullptr;
 }
 
 void BST::insert(int d)
 {
-    node *t=root;
-    node *newnode=new node;
-    newnode->data=d;
-    newnode->left=nullptr;
-    newnode->right=nullptr;   //! New node create ...
-    int leftcheck=1;
-    int rightcheck=1;
-    if (d==t->data)
+    node *t = root;
+    node *newnode = new node;
+    newnode->data = d;
+    newnode->left = nullptr;
+    newnode->right = nullptr; //! New node create ...
+    if (d == t->data)
         throw DUPLICATE;
-    while (t!=nullptr)
+    while (t != nullptr)
     {
-        if(d<t->data)
+        if (d < t->data)
         {
-            if(t->left==nullptr)
+            if (t->left == nullptr)
             {
-                t->left=newnode;
+                t->left = newnode;
             }
-            else{
-                t=t->left;
+            else
+            {
+                t = t->left;
             }
         }
-        else{
-            if(t->right==nullptr)
+        else
+        {
+            if (t->right == nullptr)
             {
-                t->right=newnode;
+                t->right = newnode;
             }
-            else{
-                t=t->right;
+            else
+            {
+                t = t->right;
             }
         }
     }
 }
 
-
 int main()
 {
     BST b;
-    b.
+    b.insert(12);
+    cout << endl;
+    return 0;
 }
