@@ -13,12 +13,17 @@ class BST
 {
 private:
     node *root;
-
+protected:
+    void preorderrec(node *);
+    void inorderrec(node *);
+    void postorderrec(node *);
 public:
     BST();
     bool isempty();
     void insert(int);
     void preorder();
+    void inorder();
+    void postorder();
 };
 
 BST::BST()
@@ -77,25 +82,41 @@ void BST::insert(int d)
 }
 
 
+//!Traversal
 
-void BST::preorder()
+void BST::preorder()   //!Preorder
 {
-    node *t=root;
-    if(isempty())
-        cout<<"No value in Tree"<<endl;
-    else
-    {
-        while (t!=nullptr)
-        {
-            cout<<t->data<<"-->";
-            t=t->left;
-
-        }
-        
-    }
+    preorderrec(root);
 }
 
-// void BST::()`
+void preorderrec(node *ptr)
+{
+    cout<<ptr->data<<" ";
+    preorderrec(ptr->left);
+    preorderrec(ptr->right);
+}
+
+void BST::inorder()   //!Inorder
+{
+    inorderrec(root);
+}
+void inorderrec(node *ptr)
+{
+    inorderrec(ptr->left);
+    cout<<ptr->data<<" ";
+    inorderrec(ptr->right);
+}
+
+void BST::postorder()  //! Postorder
+{
+    postorderrec(root);
+}
+void postorderrec(node *ptr)
+{
+    preorderrec(ptr->left);
+    preorderrec(ptr->right);
+    cout<<ptr->data<<" ";
+}
 
 int main()
 {
