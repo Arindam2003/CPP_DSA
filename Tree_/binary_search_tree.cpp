@@ -16,12 +16,18 @@ private:
 
 public:
     BST();
+    bool isempty();
     void insert(int);
 };
 
 BST::BST()
 {
     root = nullptr;
+}
+
+bool BST::isempty()
+{
+    return (root == nullptr);
 }
 
 void BST::insert(int d)
@@ -31,30 +37,37 @@ void BST::insert(int d)
     newnode->data = d;
     newnode->left = nullptr;
     newnode->right = nullptr; //! New node create ...
-    if (d == t->data)
-        throw DUPLICATE;
-    while (t != nullptr)
+    if (isempty())
     {
-        if (d < t->data)
+        root = newnode;
+    }
+    else
+    {
+        if (d == t->data)
+            throw DUPLICATE;
+        while (t != nullptr)
         {
-            if (t->left == nullptr)
+            if (d < t->data)
             {
-                t->left = newnode;
+                if (t->left == nullptr)
+                {
+                    t->left = newnode;
+                }
+                else
+                {
+                    t = t->left;
+                }
             }
             else
             {
-                t = t->left;
-            }
-        }
-        else
-        {
-            if (t->right == nullptr)
-            {
-                t->right = newnode;
-            }
-            else
-            {
-                t = t->right;
+                if (t->right == nullptr)
+                {
+                    t->right = newnode;
+                }
+                else
+                {
+                    t = t->right;
+                }
             }
         }
     }
