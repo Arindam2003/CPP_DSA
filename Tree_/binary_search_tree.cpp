@@ -14,9 +14,9 @@ class BST
 private:
     node *root;
 protected:
-    void preorderrec(node *);
-    void inorderrec(node *);
-    void postorderrec(node *);
+    void preorderrec(node*);
+    void inorderrec(node*);
+    void postorderrec(node*);
 public:
     BST();
     bool isempty();
@@ -89,39 +89,53 @@ void BST::preorder()   //!Preorder
     preorderrec(root);
 }
 
-void preorderrec(node *ptr)
+void BST::preorderrec(node *ptr)
 {
-    cout<<ptr->data<<" ";
-    preorderrec(ptr->left);
-    preorderrec(ptr->right);
+    if(ptr){
+        cout<<ptr->data<<" ";
+        preorderrec(ptr->left);
+        preorderrec(ptr->right);
+    }
 }
 
 void BST::inorder()   //!Inorder
 {
     inorderrec(root);
 }
-void inorderrec(node *ptr)
+void BST::inorderrec(node *ptr)
 {
-    inorderrec(ptr->left);
-    cout<<ptr->data<<" ";
-    inorderrec(ptr->right);
+    if(ptr)
+    {
+        inorderrec(ptr->left);
+        cout<<ptr->data<<" ";
+        inorderrec(ptr->right);
+    }
 }
 
 void BST::postorder()  //! Postorder
 {
     postorderrec(root);
 }
-void postorderrec(node *ptr)
+void BST::postorderrec(node *ptr)
 {
-    preorderrec(ptr->left);
-    preorderrec(ptr->right);
-    cout<<ptr->data<<" ";
+    if(ptr)
+    {
+        preorderrec(ptr->left);
+        preorderrec(ptr->right);
+        cout<<ptr->data<<" ";
+    }
 }
 
 int main()
 {
     BST b;
-    b.insert(12);
+    b.insert(10);
+    b.insert(6);
+    b.insert(4);
+    b.insert(8);
+    b.insert(15);
+    b.preorder();
+    // b.inorder();
     cout << endl;
     return 0;
 }
