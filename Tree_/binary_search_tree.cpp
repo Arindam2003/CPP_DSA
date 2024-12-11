@@ -49,7 +49,8 @@ void BST::insert(int d)
     }
     else
     {
-        while (t != nullptr)
+        t=root;
+        while (d!=t->data)
         {
             if (d < t->data)  // Insert Left Subtree
             {
@@ -86,13 +87,14 @@ void BST::insert(int d)
 
 void BST::preorder()   //!Preorder
 {
+    cout<<"Preorder Traversal"<<endl;
     preorderrec(root);
 }
 
 void BST::preorderrec(node *ptr)
 {
     if(ptr){
-        cout<<ptr->data<<" ";
+        cout<<ptr->data<<"--> ";
         preorderrec(ptr->left);
         preorderrec(ptr->right);
     }
@@ -100,6 +102,7 @@ void BST::preorderrec(node *ptr)
 
 void BST::inorder()   //!Inorder
 {
+    cout<<"Inorder Traversal"<<endl;
     inorderrec(root);
 }
 void BST::inorderrec(node *ptr)
@@ -107,13 +110,14 @@ void BST::inorderrec(node *ptr)
     if(ptr)
     {
         inorderrec(ptr->left);
-        cout<<ptr->data<<" ";
+        cout<<ptr->data<<"-->";
         inorderrec(ptr->right);
     }
 }
 
 void BST::postorder()  //! Postorder
 {
+    cout<<"Inorder Traversal"<<endl;
     postorderrec(root);
 }
 void BST::postorderrec(node *ptr)
@@ -122,7 +126,7 @@ void BST::postorderrec(node *ptr)
     {
         preorderrec(ptr->left);
         preorderrec(ptr->right);
-        cout<<ptr->data<<" ";
+        cout<<ptr->data<<"-->";
     }
 }
 
@@ -134,8 +138,12 @@ int main()
     b.insert(4);
     b.insert(8);
     b.insert(15);
+    cout<<endl;
     b.preorder();
-    // b.inorder();
+    cout<<endl;
+    b.inorder();
     cout << endl;
+    b.postorder();
+    cout<<endl;
     return 0;
 }
