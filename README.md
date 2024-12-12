@@ -90,6 +90,13 @@ Collection of Data Structure Implement in C++...
 
 </details>
 
+<details>
+    <summary>✅Tree</summary>
+
+- [1. Binary Search Tree](./Tree_/binary_search_tree.cpp)
+
+</details>
+
 
 <details>
 </details>
