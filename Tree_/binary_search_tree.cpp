@@ -17,6 +17,7 @@ protected:
     void preorderrec(node*);
     void inorderrec(node*);
     void postorderrec(node*);
+    node* deletenode(node *ptr,int d);
 public:
     BST();
     bool isempty();
@@ -24,6 +25,9 @@ public:
     void preorder();
     void inorder();
     void postorder();
+    void del(int);
+    node* search(int);
+    ~BST();
 };
 
 BST::BST()
@@ -82,7 +86,6 @@ void BST::insert(int d)
     }
 }
 
-
 //!Traversal
 
 void BST::preorder()   //!Preorder
@@ -127,6 +130,57 @@ void BST::postorderrec(node *ptr)
         preorderrec(ptr->left);
         preorderrec(ptr->right);
         cout<<ptr->data<<"-->";
+    }
+}
+
+node* BST::search(int d)
+{
+    node *ptr=root;
+    while(ptr)
+    {
+        if(ptr->data==d)
+        {
+            return ptr;
+        }
+        if(d<ptr->data)
+        {
+            ptr=ptr->left;
+        }
+        else{
+            ptr=ptr->right;
+        }
+    }
+    return ptr;
+}
+
+void BST::del(int d)
+{
+    root=deletenode(root,d);
+}
+
+node* BST::deletenode(node *ptr,int d)
+{
+    if(ptr==nullptr)
+        return nullptr;
+    if(d<ptr->data)
+    {
+        ptr->left=deletenode(ptr->left,d);
+    }
+    else if(d>ptr->data){
+        ptr->right=deletenode(ptr->right,d);
+    }
+    else  //Node found
+    {
+        // No child
+        if(ptr->left==nullptr && ptr->right==nullptr )
+        {
+            delete ptr;
+            return nullptr;
+        }
+        if(ptr->left==nullptr || ptr->right==nullptr)
+        {
+            
+        }
     }
 }
 
