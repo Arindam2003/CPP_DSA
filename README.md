@@ -133,7 +133,7 @@ To Solve Real World Problem It's Needed...
 - [2. Max and Min in Array Return](./Final_450/Max_and_Min_array.cpp)
 - [3. Rotate by One](./Final_450/Rotate_by_one.cpp)
 - [4. Find the Duplicate Number](./Final_450/Find_Duplicate.cpp)
-
+- [5. Merge Intervals](./Final_450/Merge_intervals.cpp)
 
 
 </details>
