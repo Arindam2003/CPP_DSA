@@ -85,4 +85,16 @@ void Rocky::dost()
 
 
 
+/*
+class MyClass {
+    private:
+        int member1;
+}
 
+int main() {
+    MyClass obj;
+
+    // Error! Cannot access private members from here.
+    obj.member1 = 5;
+}
+*/
