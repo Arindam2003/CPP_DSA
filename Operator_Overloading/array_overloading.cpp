@@ -12,6 +12,6 @@ class Array{
         }
         int& operator[](int index)
         {
-            // !Not Completed...
+            // !Not Completed yet...
         }
 };
