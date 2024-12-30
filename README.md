@@ -69,7 +69,9 @@ Contain C+++ Programs...
     <summary>👉🏻Friend Function</summary>
     
 - [1. Friend Function Example](./Friend-fun_Operator/friend.cpp)
-
+- [2. Complex Number using friend](./Friend-fun_Operator/Complex.cpp)
+- [3. Time input output](./Friend-fun_Operator/time_inp_out.cpp)
+- [4.  Array Deep Copy, Concatinate](./Friend-fun_Operator/overloading_array.cpp)
 
 </details>
 
