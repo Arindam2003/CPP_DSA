@@ -17,7 +17,16 @@ class Complex{
         friend Complex operator+(Complex,Complex);
         friend Complex operator-(Complex,Complex);
         friend Complex operator*(Complex,Complex);
+        friend Complex operator-(Complex); //! Unary operator
 };
+
+Complex operator-(Complex x)  //! Unary Frien Function
+{
+    Complex temp;
+    temp.a=-x.a;
+    temp.b=-x.b;
+    return temp;
+}
 
 Complex operator+(Complex x,Complex y)  //! Friend function
 {
