@@ -22,7 +22,7 @@ public:
     }
     bool operator==(Student s)
     {
-        if(roll_no==s.roll_no && strcmp(name,s.name) && age==s.age)
+        if(roll_no==s.roll_no && (!strcmp(name,s.name)) && age==s.age)
         {
             return true;
         }

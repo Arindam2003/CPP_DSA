@@ -85,6 +85,9 @@ Contain C+++ Programs...
 - [2. Complex Number using friend](./Friend-fun_Operator/Complex.cpp)
 - [3. Time input output](./Friend-fun_Operator/time_inp_out.cpp)
 - [4.  Array Deep Copy, Concatinate](./Friend-fun_Operator/overloading_array.cpp)
+- [5. Integer Number](./Friend-fun_Operator/integer.cpp)
+- [6. Coordinate Value Assign](./Friend-fun_Operator/coordinate.cpp)
+- [7. Student checking](./Friend-fun_Operator/student.cpp)
 
 </details>
 
