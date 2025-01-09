@@ -181,8 +181,20 @@ To Solve Real World Problem It's Needed...
 
 
 </details>
+</br>
 
 
+
+# LeetCode
+To Solve Real World Problem,It's Needed...
+
+<details>
+    <summary>⭐️POTD</summary>
+
+- [1. Count Suffix and Prefix](./LeetCode/count_prefix_suffiex.cpp)
+- [2. Count Words with a  Given Prefix](./LeetCode/counting_words_given_prefix.cpp)
+
+</details>
 
 
 
